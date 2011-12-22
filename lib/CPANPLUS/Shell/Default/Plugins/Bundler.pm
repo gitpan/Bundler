@@ -108,6 +108,15 @@ sub bnd_help {
 
     /bundle [install|remove] [--bundle_file path] [--dry-run]
 
+    # format of .bundle file :
+       
+       -------------------------------------- 
+       # comments begin with `#' and skipped 
+       CGI # conventional way
+       http://search.cpan.org/CPAN/authors/id/M/MA/MARKSTOS/CGI.pm-3.58.tar.gz # by url
+       CGI.pm-3.58.tar.gz # by distro name
+       -------------------------------------
+       
 MESSAGE
 
 }
@@ -126,6 +135,8 @@ sub _bundle_file_itterator {
 	    chomp $line;
 	    next if $line=~/^#\s/;
 	    next if $line=~/^#/;
+	    s/\s//g for $line;
+	    s/(.*?)#.*/$1/ for $line; # cutoff comments chunks
 	    next unless $line=~/\S/;
 	    $handler->($line,$cb);
 	}

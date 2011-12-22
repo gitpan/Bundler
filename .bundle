@@ -1,35 +1,6 @@
-List::MoreUtils
-Devel::PartialDump
-Package::Stash
-Package::DeprecationManager
-Class::Load
-Sub::Name
-Class::MOP
-Sub::Exporter
-namespace::clean
-Moose
-MooseX::AttributeHelpers
-namespace::autoclean
-
-MooseX::Types
-MooseX::Role::WithOverloading
-MooseX::StrictConstructor
+# comments begin with `#' and skipped 
+CGI # conventional way
+http://search.cpan.org/CPAN/authors/id/M/MA/MARKSTOS/CGI.pm-3.58.tar.gz # by url
+CGI.pm-3.58.tar.gz # by distro name
 
 
-
-
-
-
-#Package-Stash-0.05.tar.gz
-#Package-DeprecationManager-0.04.tar.gz
-#List-MoreUtils-0.22.tar.gz
-#Sub-Name-0.04.tar.gz
-#Class-MOP-1.06.tar.gz
-#Sub-Exporter-0.982.tar.gz
-#namespace-clean-0.18.tar.gz
-#Moose-1.10.tar.gz
-#MooseX-AttributeHelpers-0.23.tar.gz
-#namespace-autoclean-0.09.tar.gz
-#MooseX-Types-0.23.tar.gz
-#MooseX-Role-WithOverloading-0.08.tar.gz
-#MooseX-StrictConstructor-0.10.tar.gz
