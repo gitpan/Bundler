@@ -101,12 +101,12 @@ $handlers{'remove::real'} = sub {
 sub bnd_help { 
 
     return <<MESSAGE;
-    # Install all packages form .bundle file in current directory 
-    # or from --bundle-file option.
-    # Inspired by ruby bundler.
-    # See CPANPLUS::Shell::Default::Plugins::Bundler for details.
 
-    /bundle [install|remove] [--bundle_file path] [--dry-run]
+    # Install all packages form .bundle file in current directory 
+    # or from file choosen by --bundle-file option.
+    # See Bundler for details.
+
+    /bundle [install|remove] [--bundle_file <path>] [--dry-run]
 
     # format of .bundle file :
        
@@ -152,34 +152,3 @@ sub _bundle_file_itterator {
 
 1;
 
-__END__
-
-=head1 NAME 
-
-CPANPLUS::Shell::Default::Plugins::Bundler
-
-=head1 Author
-
-Alexey Melezhik / melezhik@gmail.com
-
-=head1 SYNOPSIS
-
-    Install all packages form .bundle file in current directory,
-    Inspired by ruby bundler.
-
-
-=head1 USAGE
-
- 
- # in cpanp client session
- /bundle # installing 
- /bundle install # installing
- /bundle remove 
-
-=head1 OPTIONS
-
- --bundle_file
- --dry-run
-   
-    
-    
