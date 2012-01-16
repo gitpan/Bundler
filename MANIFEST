@@ -1,5 +1,6 @@
 .bundle
 Build.PL
+Changes
 lib/Bundler.pm
 lib/CPANPLUS/Shell/Default/Plugins/Bundler.pm
 MANIFEST			This list of files
