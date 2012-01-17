@@ -1,5 +1,5 @@
 package Bundler;
-use version; our $VERSION = version->declare('v0.0.29');
+use version; our $VERSION = version->declare('v0.0.30');
 1;
 
 
@@ -31,21 +31,25 @@ Alexey Melezhik / melezhik@gmail.com
 
 =head1 Format of .bunlde file
 
-every line of .bundle file have a form of `<MODULE-ITEM> [<MINIMAL-VERSION>] [# comments]'
+every line of .bundle file have a form of <MODULE-ITEM> [<MINIMAL-VERSION>] [# comments]
 
 =head1 MODULE-ITEM
 
-what is module item, see parse_module method documentation on http://search.cpan.org/perldoc?CPANPLUS::Backend, in common case it should
+for the explanation of the module item  see "parse_module" method documentation on http://search.cpan.org/perldoc?CPANPLUS::Backend, in common case it should
 be the name of CPAN module to install/remove
 
 =head1 MINIMAL-VERSION
 
-minimal version of module you want to install, if one have version higher or equal module wouldn't be installed.
-If minimal version is not set, Bundler would update corresponding module.
+Minimal version of the module to be installed, if module already installed and has version higher or equal 
+to minimal, it won't be installed.
+
+If minimal version is not set, Bundler would update module to the latest version.
+
+If minimal version is set to '0', Bundler would only install module if it's not installed at all.
 
 =head1 Comments
 
-may occur in and should be started with #
+may occur and should be started with #
 
  # this is comment
 
@@ -75,8 +79,8 @@ install from given url path
 
 =head1 ACKNOWLEDGMENTS
 
- to the authors of bundler
- to the author of CPANPLUS
+ to the authors of ruby bundler
+ to Chris Williams - the author of the CPANPLUS
 
 =head1 SEE ALSO
 

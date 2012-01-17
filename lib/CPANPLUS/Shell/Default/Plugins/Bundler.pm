@@ -50,10 +50,10 @@ sub _mod_need_upgrade {
  my $m = shift;
  my $required_version = shift;
  my $st;
- if ($required_version && $m->installed_version) {
+ if ((defined $required_version) && defined $m->installed_version) {
   $st = CPAN::Version->vgt($required_version,$m->installed_version)
  }else{
-  $st = $m->installed_version ? 0 : 1;
+  $st = (defined $m->installed_version) ? 0 : 1;
  }
  return $st;
 }
@@ -65,7 +65,7 @@ sub _parse_module_item_line {
  s/\s//g for ($mod_name,$v);
  my $m_obj = $cb->parse_module(module => $mod_name);
  if ($m_obj){
-  $v ||= $m_obj->package_version;
+  $v || $m_obj->package_version unless defined $v;
  }
  return ($mod_name,$v,$m_obj);
 }
